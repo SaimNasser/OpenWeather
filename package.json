@@ -19,6 +19,7 @@
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.8.10",
     "@react-navigation/stack": "^5.12.8",
+    "@rnmapbox/maps": "rnmapbox/maps#main",
     "axios": "^0.21.1",
     "react": "17.0.1",
     "react-native": "0.64.2",

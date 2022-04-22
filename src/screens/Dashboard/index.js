@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Text, View } from 'react-native';
 import { showMessage } from 'react-native-flash-message';
 import { ScreenWrapper } from 'react-native-screen-wrapper';
@@ -7,9 +7,13 @@ import Button from '../../components/Button';
 import { logout } from '../../Redux/Actions/Auth';
 import AppColors from '../../utills/AppColors';
 import styles from './styles';
+import MapboxGL from '@rnmapbox/maps';
+MapboxGL.setAccessToken('pk.eyJ1Ijoic2FpbTEyNSIsImEiOiJjbDJhZ2gybnEwNGljM2pwYWhqZW9tc3gxIn0.-k0ZaxVVj9JZTsuZF-FuOQ');
+
 export default function Dashboard(props) {
   const user = useSelector((state) => state.Auth.user);
   const dispatch = useDispatch();
+  const mapRef = useRef(null)
   const logoutMethod = async () => {
     showMessage({
       message: 'Logged Out',
@@ -18,12 +22,21 @@ export default function Dashboard(props) {
     });
     dispatch(logout());
   };
+  useEffect(() => {
+
+  }, [])
+  const recenter = async (coords) => {
+    mapRef.current.getMap().flyTo(coords, 1000)
+  }
   return (
-    <ScreenWrapper statusBarColor={AppColors.white} barStyle="dark-content">
+    <ScreenWrapper statusBarColor={AppColors.white} translucent barStyle="dark-content">
       <View style={styles.mainViewContainer}>
-        <Text style={styles.text}>Dashboard</Text>
-        <Text style={styles.text}>{user.userName}</Text>
-        <Button title="Logout" onPress={logoutMethod} />
+        <MapboxGL.MapView onLayout={() => recenter([73.0479, 33.6844])} ref={mapRef} style={styles.map}>
+          <MapboxGL.PointAnnotation coordinate={[73.0479, 33.6844]} >
+          </MapboxGL.PointAnnotation>
+        </MapboxGL.MapView>
+
+        {/* <Button title="Logout" onPress={logoutMethod} /> */}
       </View>
     </ScreenWrapper>
   );
