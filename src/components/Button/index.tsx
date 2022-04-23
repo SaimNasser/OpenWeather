@@ -2,8 +2,17 @@ import React from 'react';
 import {ActivityIndicator, Text, TouchableOpacity} from 'react-native';
 import AppColors from '../../utills/AppColors';
 import styles from './styles';
-
-const Button = ({
+type Props = {
+  title: string;
+  onPress: any;
+  disabled: Boolean;
+  isLoading: Boolean;
+  loaderColor: string;
+  activeOpacity: number;
+  containerStyle: any;
+  textStyle: any;
+};
+const Button: React.FC<Props> = ({
   title,
   onPress,
   disabled = false,
