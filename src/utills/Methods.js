@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export function debounce(func, wait, immediate) {
     var timeout;
     return function () {
@@ -12,3 +14,19 @@ export function debounce(func, wait, immediate) {
         if (callNow) func.apply(context, args);
     };
 };
+
+export const getRefinedWeatherList = (rawList) => {
+    return rawList?.map((weatherObj) => {
+        const desc = weatherObj?.weather[0]?.description
+        let day = moment(weatherObj?.dt_txt, 'YYYY-MM-DD hh:mm').format('dddd')
+        return {
+            temperature: (Number(weatherObj?.main?.temp) - 273.15).toFixed(1),
+            feelsLike: (Number(weatherObj?.main?.feels_like) - 273.15).toFixed(1),
+            description: desc && desc != '' ? desc : '-',
+            date: moment(weatherObj?.dt_txt, 'YYYY-MM-DD hh:mm').format('DD-MM-YYYY'),
+            time: moment(weatherObj?.dt_txt, 'YYYY-MM-DD hh:mm').format('hh:mm'),
+            imgUrl: `https://openweathermap.org/img/wn/${weatherObj?.weather[0]?.icon}@2x.png`,
+            day
+        }
+    })
+}

@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { Cities } from '../../utills/dummydata';
 
 const initialState = {
-    cityInfo: null,
+    cityInfo: Cities[0],
 };
 export const citySlice = createSlice({
     name: 'City',

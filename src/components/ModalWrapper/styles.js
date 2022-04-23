@@ -11,13 +11,13 @@ const styles = StyleSheet.create({
     height: height(12),
     width: width(100),
     position: 'absolute',
-    top: -height(7),
+    top: -height(8),
   },
   modalInnerContainer: {
     backgroundColor: AppColors.white,
-    borderTopRightRadius: width(7),
-    borderTopLeftRadius: width(7),
-    paddingVertical: height(1),
+    // borderTopRightRadius: width(7),
+    // borderTopLeftRadius: width(7),
+    // paddingVertical: height(1),
     alignItems: 'center',
   },
 });

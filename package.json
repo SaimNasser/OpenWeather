@@ -22,6 +22,7 @@
     "@reduxjs/toolkit": "^1.7.2",
     "@rnmapbox/maps": "rnmapbox/maps#main",
     "axios": "^0.21.1",
+    "moment": "^2.29.3",
     "react": "17.0.1",
     "react-native": "0.64.2",
     "react-native-dimension": "^1.0.6",

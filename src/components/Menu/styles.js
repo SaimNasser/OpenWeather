@@ -6,18 +6,19 @@ const styles = StyleSheet.create({
         backgroundColor: AppColors.white,
         elevation: 2,
         flexDirection: 'row',
-        width: width(85),
+        width: width(45),
         paddingVertical: height(1.5),
         alignItems: 'center',
         alignSelf: 'center',
         paddingHorizontal: width(4),
         paddingLeft: width(5),
-        borderRadius: width(2)
+        borderRadius: width(2),
     },
     text: {
         flex: 1,
         fontSize: width(3.9),
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: AppColors.black
     },
     dropDownContainer: {
         backgroundColor: AppColors.white,

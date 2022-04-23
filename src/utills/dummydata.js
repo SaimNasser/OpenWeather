@@ -20,3 +20,12 @@ export const Cities = [
         coords: [71.5249, 34.0151],
     },
 ]
+export const WeekDays = [
+    { name: 'Monday' },
+    { name: 'Tuesday' },
+    { name: 'Wednesday' },
+    { name: 'Thursday' },
+    { name: 'Friday' },
+    { name: 'Saturday' },
+    { name: 'Sunday' }
+]

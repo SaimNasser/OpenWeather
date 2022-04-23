@@ -14,24 +14,27 @@ MapboxGL.setAccessToken(
 import {height, width} from 'react-native-dimension';
 import IconButton from '../../components/IconButton';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import {selectCity} from '../../Redux/features/citySlice';
 
 export type Props = {
   navigation: any;
   route: any;
 };
 export default function Dashboard(props: Props) {
-  const {city} = props.route.params;
+  const cityInfo = useSelector(selectCity);
   const mapRef = useRef(null);
   const cameraRef = useRef(null);
   // const [userLocation, setUserLocation] = useState(null);
   const userLocRef = useRef(null);
   useEffect(() => {}, []);
   const recenter = async (coords: number[]) => {
-    cameraRef?.current?.setCamera({
-      centerCoordinate: coords,
-      zoomLevel: 11,
-      animationDuration: 2000,
-    });
+    setTimeout(() => {
+      cameraRef?.current?.setCamera({
+        centerCoordinate: coords,
+        zoomLevel: 11,
+        animationDuration: 2000,
+      });
+    }, 600);
   };
   const renderBackIcon = () => (
     <AntDesign name={'arrowleft'} size={height(3)} color={AppColors.black} />
@@ -43,10 +46,10 @@ export default function Dashboard(props: Props) {
       barStyle="dark-content">
       <View style={styles.mainViewContainer}>
         <MapboxGL.MapView
-          onLayout={() => recenter(city?.coords)}
+          onLayout={() => recenter(cityInfo?.coords)}
           ref={mapRef}
           style={styles.map}>
-          <MapboxGL.PointAnnotation coordinate={city?.coords} />
+          <MapboxGL.PointAnnotation coordinate={cityInfo?.coords} />
 
           <MapboxGL.Camera ref={cameraRef} />
           <MapboxGL.UserLocation visible={true} ref={userLocRef} />

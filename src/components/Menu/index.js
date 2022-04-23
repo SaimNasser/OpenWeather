@@ -8,22 +8,27 @@ import { selectCity } from '../../Redux/features/citySlice';
 import AppColors from '../../utills/AppColors';
 import CommonStyles from '../../utills/CommonStyles';
 import styles from './styles';
-export default function CityDropMenu({
-  cities = [],
-  onPress = () => { }
+export default function Menu({
+  onPress = () => { },
+  iconType = 'location',
+  text = null,
+  placeholder = '? ? ?'
 }) {
   const cityInfo = useSelector(selectCity)
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
       <View style={styles.container}>
         <Entypo
-          name={'location'}
+          name={iconType}
           color={AppColors.black}
           size={height(2.5)}
           style={CommonStyles.marginRight_3}
         />
-        <Text style={styles.text}>{cityInfo ? cityInfo?.name : 'Select City'}</Text>
-        <Entypo name={'chevron-down'} color={AppColors.black} size={height(2.5)} />
+        <Text style={styles.text}>{text ?? placeholder}</Text>
+        <Entypo
+          name={'chevron-down'}
+          color={AppColors.black}
+          size={height(2.5)} />
       </View>
     </TouchableOpacity>
   );

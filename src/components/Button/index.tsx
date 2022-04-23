@@ -1,7 +1,9 @@
 import React from 'react';
-import {ActivityIndicator, Text, TouchableOpacity} from 'react-native';
+import {ActivityIndicator, Text, TouchableOpacity, View} from 'react-native';
 import AppColors from '../../utills/AppColors';
+import CommonStyles from '../../utills/CommonStyles';
 import styles from './styles';
+import {width, height} from 'react-native-dimension';
 type Props = {
   title: string;
   onPress: any;
@@ -21,6 +23,7 @@ const Button: React.FC<Props> = ({
   activeOpacity = 0.7,
   containerStyle = {},
   textStyle = {},
+  icon = null,
 }) => {
   return (
     <TouchableOpacity
@@ -31,7 +34,17 @@ const Button: React.FC<Props> = ({
       {isLoading ? (
         <ActivityIndicator color={loaderColor} size="large" />
       ) : (
-        <Text style={[styles.text, textStyle]}>{title}</Text>
+        <View style={CommonStyles.rowAlignItemCenter}>
+          <Text
+            style={[
+              styles.text,
+              textStyle,
+              // {marginRight: icon ? width(1.5) : 0},
+            ]}>
+            {title}
+          </Text>
+          {icon && icon()}
+        </View>
       )}
     </TouchableOpacity>
   );
