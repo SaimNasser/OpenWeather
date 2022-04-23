@@ -1,5 +1,6 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 import AppColors from '../../utills/AppColors';
+import {height, width} from 'react-native-dimension';
 
 const styles = StyleSheet.create({
   mainViewContainer: {
@@ -8,10 +9,22 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
   text: {
-    color: AppColors.green
+    color: AppColors.green,
   },
   map: {
-    flex: 1
-  }
+    flex: 1,
+  },
+  myLocationBtn: {
+    elevation: 5,
+    position: 'absolute',
+    right: width(6),
+    top: height(6),
+  },
+  backBtn: {
+    elevation: 5,
+    position: 'absolute',
+    left: width(6),
+    top: height(6),
+  },
 });
 export default styles;

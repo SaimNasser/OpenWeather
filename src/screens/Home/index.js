@@ -12,8 +12,22 @@ import ModalDropdown from 'react-native-modal-dropdown';
 import styles from './styles';
 import CityDropMenu from '../../components/CityDropMenu';
 import { Cities } from '../../utills/dummydata'
-export default function Dashboard(props) {
-  const [selectedCity, setSelectedCity] = useState()
+import { selectCity } from '../../Redux/features/citySlice';
+import CityModal from '../../components/CityModal';
+export default function Dashboard({ navigation, route }) {
+  const cityInfo = useSelector(selectCity)
+  const [cityModal, setCityModal] = useState(false)
+  const openMap = () => {
+    const city = Cities.find(item => item.name == selectedCity)
+    if (city) {
+      navigation.navigate('Map', { city: city })
+    } else {
+      showMessage({
+        message: 'Please select city first',
+        type: 'danger'
+      })
+    }
+  }
   const renderHeader = () =>
     <Header
       title={'Weather App'}
@@ -26,10 +40,10 @@ export default function Dashboard(props) {
       <View style={styles.mainViewContainer}>
         <CityDropMenu
           cities={Cities}
-          selectedCity={selectedCity}
-          setSelectedCity={setSelectedCity} />
-        
+          onPress={() => setCityModal(true)}
+        />
       </View>
+      <CityModal isVisible={cityModal} onClose={() => setCityModal(false)} />
     </ScreenWrapper>
   );
 }

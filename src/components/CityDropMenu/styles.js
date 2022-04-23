@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: width(85),
         paddingVertical: height(1.5),
-        // justifyContent:'center',
         alignItems: 'center',
         alignSelf: 'center',
         paddingHorizontal: width(4),
@@ -17,7 +16,7 @@ const styles = StyleSheet.create({
     },
     text: {
         flex: 1,
-        fontSize: width(3.7),
+        fontSize: width(3.9),
         fontWeight: 'bold'
     },
     dropDownContainer: {
