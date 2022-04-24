@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, View, Image, Text } from 'react-native';
+import { FlatList, View, Image, Text, ActivityIndicator } from 'react-native';
 import { showMessage } from 'react-native-flash-message';
 import { useSelector } from 'react-redux';
 import Button from '../../components/Button';
@@ -18,26 +18,62 @@ import Entypo from 'react-native-vector-icons/Entypo'
 import CommonStyles from '../../utills/CommonStyles';
 import { selectWeekday } from '../../Redux/features/weekdaySlice';
 import { ModalTypes } from '../../utills/Enums';
+import { LineChart } from "react-native-chart-kit";
+import WeatherCard from '../../components/WeatherCard';
+const chartConfig = {
+  backgroundGradientFrom: AppColors.white,
+  // backgroundGradientFromOpacity: 0,
+  backgroundGradientTo: AppColors.white,
+  // backgroundGradientToOpacity: 0.5,
+  color: (opacity = 1) => AppColors.darkGrey,
+  labelColor: () => AppColors.darkGrey,
+  strokeWidth: 2, // optional, default 3
+  barPercentage: 0.5,
+  useShadowColorFromDataset: false // optional
+};
 export default function Dashboard({ navigation, route }) {
   const cityInfo = useSelector(selectCity)
   const day = useSelector(selectWeekday)
   const [modal, setModal] = useState({ isVisible: false, type: ModalTypes.CITY })
   const [weeklyWeather, setWeeklyWeather] = useState([])
+  const [weekly, setWeekly] = useState([])
+  const [chartLoading, setChartLoading] = useState(true)
+  const [chartData, setChartdata] = useState(null)
   useEffect(() => {
     loadData()
-  }, [cityInfo])
+  }, [day, cityInfo])
   const loadData = async () => {
     const weatherData = await getCityWeather(cityInfo?.coords[1], cityInfo?.coords[0])
     if (weatherData)
       setWeeklyWeather(weatherData)
   }
+  useEffect(() => {
+    getDayArray()
+  }, [weeklyWeather])
+
   const getDayArray = () => {
     let temp = []
+    let times = []
+    let temperatures = []
     weeklyWeather.forEach(item => {
-      if (item?.day == day?.name)
+      if (item?.day == day?.name) {
         temp.push(item)
+        times.push(item?.time)
+        temperatures.push(Number(item?.temperature).toFixed(0))
+      }
     })
-    return temp
+    const data = {
+      labels: times,
+      datasets: [
+        {
+          data: temperatures,
+          strokeWidth: 2
+        }
+      ],
+    };
+    setChartdata(data)
+    setWeekly(temp)
+    setChartLoading(false)
   }
   const openMap = () => {
     if (cityInfo) {
@@ -51,10 +87,10 @@ export default function Dashboard({ navigation, route }) {
   }
   const renderHeader = () => (
     <Header
-      title={'Weather App'}
+      title={'Open Weather'}
     />)
   const renderWeatherCard = ({ item }) => (
-    <><Text style={{ color: 'black' }}>{item?.day} {item?.temperature}</Text></>
+    <WeatherCard item={item} />
   )
   const renderEmptyWeather = () => (
     <View style={styles.emptyContainer}>
@@ -88,11 +124,23 @@ export default function Dashboard({ navigation, route }) {
         <View style={styles.flatlistContainer}>
           <FlatList
             horizontal
-            data={getDayArray()}
+            data={weekly}
+            contentContainerStyle={styles.flatlistContent}
             ListEmptyComponent={renderEmptyWeather}
             renderItem={renderWeatherCard}
+            keyExtractor={item => item.name}
           />
         </View>
+        {chartData?.datasets[0]?.data?.length > 0 &&
+          chartData?.labels?.length > 0 &&
+          <LineChart
+            data={chartData}
+            width={width(90)}
+            height={height(30)}
+            style={styles.chart}
+            chartConfig={chartConfig}
+            bezier
+          />}
       </View>
       <Button
         title='Map'

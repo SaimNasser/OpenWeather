@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: AppColors.darkGrey,
     width: width(100),
-    // height: height(7)
   },
   title: {
     color: AppColors.white,
@@ -28,9 +27,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: width(4)
   },
   selectedItem: {
-    backgroundColor: AppColors.darkGrey,
+    backgroundColor: AppColors.gray50,
     paddingHorizontal: width(4),
-    borderRadius: width(1.7)
+    borderLeftWidth: width(1),
+    borderLeftColor: AppColors.darkGrey
   },
   itemName: {
     fontSize: width(4),
@@ -40,13 +40,17 @@ const styles = StyleSheet.create({
   itemNameSelected: {
     fontSize: width(4),
     paddingVertical: height(1.5),
-    color: AppColors.white
+    color: AppColors.black
 
   },
   line: {
     width: width(95),
     height: 0.1,
     backgroundColor: AppColors.gray
+  },
+  cityImg: {
+    height: height(30),
+    width: width(85)
   }
 });
 export default styles;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Text, TouchableOpacity, View, Image } from 'react-native';
 import { height, width } from 'react-native-dimension';
 import ModalWrapper from '../ModalWrapper';
 import styles from './styles';
@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectCity, setCity } from '../../Redux/features/citySlice';
 import { ModalTypes } from '../../utills/Enums';
 import { selectWeekday, setWeekday } from '../../Redux/features/weekdaySlice';
+import cityImg from '../../assets/images/cityImg.png'
+import calendarImg from '../../assets/images/calendarImg.png'
 const BottomModal = ({
   isVisible,
   onClose,
@@ -43,10 +45,8 @@ const BottomModal = ({
       isVisible={isVisible}
       onClose={onClose}
       containerStyle={styles.modalContainer}>
-      <View style={styles.header}>
-        <Text style={styles.title}>{type == ModalTypes.CITY ? 'Select City' : 'Select Day'}</Text>
-      </View>
       <View style={styles.mainContainer}>
+        <Image source={type == ModalTypes.CITY ? cityImg : calendarImg} style={styles.cityImg} resizeMode={'contain'} />
         <FlatList
           data={type == ModalTypes.CITY ? Cities : WeekDays}
           renderItem={renderItem}

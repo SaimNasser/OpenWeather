@@ -42,6 +42,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     width: width(100),
     padding: width(3)
+  },
+  chart: {
+    marginLeft: width(2),
+    marginTop: height(4)
+  },
+  flatlistContent: {
+    paddingVertical: height(2),
+    paddingHorizontal: width(4),
   }
 });
 export default styles;

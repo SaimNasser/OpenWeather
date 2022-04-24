@@ -15,9 +15,8 @@ const styles = StyleSheet.create({
   },
   modalInnerContainer: {
     backgroundColor: AppColors.white,
-    // borderTopRightRadius: width(7),
-    // borderTopLeftRadius: width(7),
-    // paddingVertical: height(1),
+    borderTopRightRadius: width(7),
+    borderTopLeftRadius: width(7),
     alignItems: 'center',
   },
 });
