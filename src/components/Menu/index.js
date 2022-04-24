@@ -14,7 +14,6 @@ export default function Menu({
   text = null,
   placeholder = '? ? ?'
 }) {
-  const cityInfo = useSelector(selectCity)
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
       <View style={styles.container}>

@@ -1,6 +1,6 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import AppColors from '../../utills/AppColors';
-import {height, width} from 'react-native-dimension';
+import { height, width } from 'react-native-dimension';
 
 const styles = StyleSheet.create({
   mainViewContainer: {
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     right: width(6),
     top: height(6),
   },
-  cityInfoBtn: {
+  selectedCityBtn: {
     elevation: 5,
     position: 'absolute',
     right: width(24),

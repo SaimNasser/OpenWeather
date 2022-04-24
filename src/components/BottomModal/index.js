@@ -6,9 +6,8 @@ import styles from './styles';
 import Button from '../Button'
 import { Cities, WeekDays } from '../../utills/dummydata';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCity, setCity } from '../../Redux/features/citySlice';
+import { selectCity, selectWeekday, setCity, setWeekday } from '../../Redux/features/citySlice';
 import { ModalTypes } from '../../utills/Enums';
-import { selectWeekday, setWeekday } from '../../Redux/features/weekdaySlice';
 import cityImg from '../../assets/images/cityImg.png'
 import calendarImg from '../../assets/images/calendarImg.png'
 const BottomModal = ({
@@ -17,7 +16,7 @@ const BottomModal = ({
   type = ModalTypes.CITY
 
 }) => {
-  const cityInfo = useSelector(selectCity)
+  const selectedCity = useSelector(selectCity)
   const day = useSelector(selectWeekday)
   const dispatch = useDispatch()
   const onPress = (item) => {
@@ -29,7 +28,7 @@ const BottomModal = ({
     onClose()
   }
   const renderItem = ({ item, index }) => {
-    const isSelected = type == ModalTypes.CITY ? item?.name == cityInfo?.name : item?.name == day?.name
+    const isSelected = type == ModalTypes.CITY ? item?.name == selectedCity?.name : item?.name == day?.name
     return (
       <TouchableOpacity
         onPress={() => onPress(item)}

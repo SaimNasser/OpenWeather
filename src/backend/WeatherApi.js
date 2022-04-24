@@ -1,13 +1,19 @@
 import { showMessage } from "react-native-flash-message";
 import { getRefinedWeatherList } from "../utills/Methods";
 import { ApiManager } from "./ApiManager";
+import { API_KEY } from '@env'
+import axios from 'axios';
+import { BaseUrl } from './Config';
+axios.defaults.baseURL = BaseUrl;
 
 export const getCityWeather = async (lat, lon) => {
     try {
-        const response = await ApiManager.get('http://api.openweathermap.org/data/2.5/forecast/', {
-            lat,
-            lon,
-            appid: '1082014753ca969ee676e1d5004b42b0'
+        const response = await axios.get('forecast/', {
+            params: {
+                lat,
+                lon,
+                appid: API_KEY
+            }
         })
         if (response?.data?.cod == '200') {
             let rawList = response?.data?.list

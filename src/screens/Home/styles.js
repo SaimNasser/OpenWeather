@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   mainViewContainer: {
     flex: 1,
     backgroundColor: AppColors.white,
-    // paddingHorizontal: width(5),
     paddingVertical: height(1.5)
   },
   flatlist: {
@@ -20,10 +19,10 @@ const styles = StyleSheet.create({
     backgroundColor: AppColors.white,
     elevation: 2,
     alignSelf: 'center',
-    // width: width(35),
     paddingHorizontal: width(4),
     paddingVertical: height(1.5),
-    borderRadius: width(2)
+    borderRadius: width(2),
+    marginRight: width(6)
   },
   emptyImage: {
     width: width(20),
@@ -52,7 +51,6 @@ const styles = StyleSheet.create({
   },
   mapBtn: {
     backgroundColor: AppColors.darkGrey,
-    width: width(50),
     alignSelf: 'center',
     borderRadius: width(2)
   }

@@ -1,17 +1,18 @@
-import React, { Component, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import React, { useEffect } from 'react';
+import RNLocation from 'react-native-location';
 import Home from '../screens/Home';
 import Map from '../screens/Map';
-import { useSelector } from 'react-redux';
-import Loader from '../components/Loader'
+import SplashScreen from 'react-native-splash-screen'
+
 const Stack = createStackNavigator();
-import RNLocation from 'react-native-location';
 RNLocation.configure({
   distanceFilter: 5.0
 })
 export default function Routes() {
   useEffect(() => {
+    SplashScreen.hide();
     RNLocation.requestPermission({
       ios: "whenInUse",
       android: {
@@ -22,7 +23,6 @@ export default function Routes() {
 
   return (
     <NavigationContainer>
-      <Loader />
       <Stack.Navigator initialRouteName="Home" headerMode="none">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Map" component={Map} />

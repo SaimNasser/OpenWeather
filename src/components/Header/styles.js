@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {height, width} from 'react-native-dimension';
 import AppColors from '../../utills/AppColors';
+import { Fonts } from '../../utills/Enums';
 
 const styles = StyleSheet.create({
   container: {
@@ -28,12 +29,11 @@ const styles = StyleSheet.create({
     flex: 1,
     height: '100%',
     justifyContent: 'center',
-    // alignItems: 'center',
   },
   title: {
     color: AppColors.black,
-    fontWeight: 'bold',
-    fontSize: width(4.7),
+    fontSize: width(4.9),
+    fontFamily: Fonts.Pacifo
   },
   cornerContainer: {
     height: '100%',

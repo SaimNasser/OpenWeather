@@ -1,22 +1,12 @@
 import React from 'react';
-import {ActivityIndicator, Text, TouchableOpacity, View} from 'react-native';
+import { ActivityIndicator, Text, TouchableOpacity, View } from 'react-native';
 import AppColors from '../../utills/AppColors';
 import CommonStyles from '../../utills/CommonStyles';
 import styles from './styles';
-import {width, height} from 'react-native-dimension';
-type Props = {
-  title: string;
-  onPress: any;
-  disabled: Boolean;
-  isLoading: Boolean;
-  loaderColor: string;
-  activeOpacity: number;
-  containerStyle: any;
-  textStyle: any;
-};
-const Button: React.FC<Props> = ({
-  title,
-  onPress,
+
+const Button = ({
+  title = '? ? ?',
+  onPress = () => { },
   disabled = false,
   isLoading = false,
   loaderColor = AppColors.white,

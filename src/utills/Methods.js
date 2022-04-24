@@ -15,6 +15,7 @@ export function debounce(func, wait, immediate) {
     };
 };
 
+//Filter and manipulte data from api
 export const getRefinedWeatherList = (rawList) => {
     return rawList?.map((weatherObj) => {
         const desc = weatherObj?.weather[0]?.description
@@ -30,6 +31,7 @@ export const getRefinedWeatherList = (rawList) => {
         }
     })
 }
+
 export const capitalizeFirst = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
