@@ -19,17 +19,18 @@ import CommonStyles from '../../utills/CommonStyles';
 import { selectWeekday } from '../../Redux/features/weekdaySlice';
 import { ModalTypes } from '../../utills/Enums';
 import { LineChart } from "react-native-chart-kit";
+import SkeletonPlaceholder from "react-native-skeleton-placeholder";
 import WeatherCard from '../../components/WeatherCard';
+import { ChartLoader, WeatherLoader } from '../../components/SkeletonLoaders';
+import IconButton from '../../components/IconButton';
 const chartConfig = {
   backgroundGradientFrom: AppColors.white,
-  // backgroundGradientFromOpacity: 0,
   backgroundGradientTo: AppColors.white,
-  // backgroundGradientToOpacity: 0.5,
   color: (opacity = 1) => AppColors.darkGrey,
   labelColor: () => AppColors.darkGrey,
-  strokeWidth: 2, // optional, default 3
+  strokeWidth: 2,
   barPercentage: 0.5,
-  useShadowColorFromDataset: false // optional
+  useShadowColorFromDataset: false
 };
 export default function Dashboard({ navigation, route }) {
   const cityInfo = useSelector(selectCity)
@@ -43,6 +44,7 @@ export default function Dashboard({ navigation, route }) {
     loadData()
   }, [day, cityInfo])
   const loadData = async () => {
+    setChartLoading(true)
     const weatherData = await getCityWeather(cityInfo?.coords[1], cityInfo?.coords[0])
     if (weatherData)
       setWeeklyWeather(weatherData)
@@ -73,7 +75,9 @@ export default function Dashboard({ navigation, route }) {
     };
     setChartdata(data)
     setWeekly(temp)
-    setChartLoading(false)
+    setTimeout(() => {
+      setChartLoading(false)
+    }, 600);
   }
   const openMap = () => {
     if (cityInfo) {
@@ -92,20 +96,25 @@ export default function Dashboard({ navigation, route }) {
   const renderWeatherCard = ({ item }) => (
     <WeatherCard item={item} />
   )
-  const renderEmptyWeather = () => (
-    <View style={styles.emptyContainer}>
-      <View style={styles.emptyInner}>
-        <Image
-          source={sadCloud}
-          tintColor={AppColors.darkGrey}
-          resizeMode={'contain'}
-          style={styles.emptyImage} />
-        <Text style={styles.emptyText}>No data available</Text>
-      </View>
-    </View>
-  )
+  const renderEmptyWeather = () => {
+    if (!chartLoading) {
+      return (
+        <View style={styles.emptyContainer}>
+          <View style={styles.emptyInner}>
+            <Image
+              source={sadCloud}
+              tintColor={AppColors.darkGrey}
+              resizeMode={'contain'}
+              style={styles.emptyImage} />
+            <Text style={styles.emptyText}>No data available</Text>
+          </View>
+        </View>
+      )
+    } else return <></>
+  }
   return (
     <ScreenWrapper
+      scrollEnabled
       statusBarColor={AppColors.white}
       barStyle='dark-content'
       headerUnScrollable={renderHeader}>
@@ -121,41 +130,47 @@ export default function Dashboard({ navigation, route }) {
             placeholder={'Select Day'}
             onPress={() => setModal({ isVisible: true, type: ModalTypes.WEEKDAY })} />
         </View>
-        <View style={styles.flatlistContainer}>
-          <FlatList
+        {chartLoading ?
+          <WeatherLoader />
+          : <FlatList
             horizontal
             data={weekly}
             contentContainerStyle={styles.flatlistContent}
             ListEmptyComponent={renderEmptyWeather}
             renderItem={renderWeatherCard}
+            style={styles.flatlist}
             keyExtractor={item => item.name}
-          />
-        </View>
-        {chartData?.datasets[0]?.data?.length > 0 &&
-          chartData?.labels?.length > 0 &&
-          <LineChart
-            data={chartData}
-            width={width(90)}
-            height={height(30)}
-            style={styles.chart}
-            chartConfig={chartConfig}
-            bezier
           />}
+        {chartLoading ?
+          <ChartLoader />
+          : <View>
+            {chartData?.datasets[0]?.data?.length > 0 &&
+              chartData?.labels?.length > 0 &&
+              <LineChart
+                data={chartData}
+                width={width(90)}
+                height={height(30)}
+                yAxisSuffix="C°"
+                style={styles.chart}
+                chartConfig={chartConfig}
+                bezier
+
+              />}
+          </View>}
       </View>
-      <Button
-        title='Map'
+      <IconButton
+        containerStyle={styles.mapBtn}
         onPress={openMap}
         icon={() =>
           <Entypo
-            name={'chevron-right'}
+            name={'location'}
             color={AppColors.white}
-            size={height(2.2)}
-            style={CommonStyles.marginTop_05} />} />
-
+            size={height(2.5)}
+          />} />
       <BottomModal
         type={modal?.type}
         isVisible={modal?.isVisible}
         onClose={() => setModal({ ...modal, isVisible: false })} />
-    </ScreenWrapper>
+    </ScreenWrapper >
   );
 }

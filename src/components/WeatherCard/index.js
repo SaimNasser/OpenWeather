@@ -16,7 +16,6 @@ import LinearGradient from 'react-native-linear-gradient';
 const WeatherCard = ({
     item
 }) => {
-    console.log(item);
     const Seperator = () => (
         <LinearGradient
             start={{ x: 0, y: 1 }}

@@ -14,6 +14,7 @@ MapboxGL.setAccessToken(
 import {height, width} from 'react-native-dimension';
 import IconButton from '../../components/IconButton';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {selectCity} from '../../Redux/features/citySlice';
 
 export type Props = {
@@ -39,6 +40,13 @@ export default function Dashboard(props: Props) {
   const renderBackIcon = () => (
     <AntDesign name={'arrowleft'} size={height(3)} color={AppColors.black} />
   );
+  const renderCityIcon = () => (
+    <MaterialIcons
+      name={'location-city'}
+      size={height(3)}
+      color={AppColors.black}
+    />
+  );
   return (
     <ScreenWrapper
       statusBarColor={AppColors.white}
@@ -57,6 +65,11 @@ export default function Dashboard(props: Props) {
         <IconButton
           containerStyle={styles.myLocationBtn}
           onPress={() => recenter(userLocRef.current.state?.coordinates)}
+        />
+        <IconButton
+          icon={renderCityIcon}
+          containerStyle={styles.cityInfoBtn}
+          onPress={() => recenter(cityInfo?.coords)}
         />
         <IconButton
           icon={renderBackIcon}

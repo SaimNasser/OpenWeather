@@ -8,12 +8,11 @@ const styles = StyleSheet.create({
     // paddingHorizontal: width(5),
     paddingVertical: height(1.5)
   },
-  flatlistContainer: {
-
+  flatlist: {
+    flexGrow: 0
   },
   emptyContainer: {
     height: height(27),
-    justifyContent: 'center',
     width: width(100),
     marginTop: height(3),
   },
@@ -50,6 +49,12 @@ const styles = StyleSheet.create({
   flatlistContent: {
     paddingVertical: height(2),
     paddingHorizontal: width(4),
+  },
+  mapBtn: {
+    backgroundColor: AppColors.darkGrey,
+    width: width(50),
+    alignSelf: 'center',
+    borderRadius: width(2)
   }
 });
 export default styles;

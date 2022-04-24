@@ -20,6 +20,12 @@ const styles = StyleSheet.create({
     right: width(6),
     top: height(6),
   },
+  cityInfoBtn: {
+    elevation: 5,
+    position: 'absolute',
+    right: width(24),
+    top: height(6),
+  },
   backBtn: {
     elevation: 5,
     position: 'absolute',

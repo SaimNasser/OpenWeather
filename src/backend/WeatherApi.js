@@ -13,11 +13,11 @@ export const getCityWeather = async (lat, lon) => {
             let rawList = response?.data?.list
             return getRefinedWeatherList(rawList)
         } else {
-    return false
             showMessage({
                 message: 'Something went wrong!',
                 type: 'danger'
             })
+            return false
         }
     } catch (error) {
         console.log(error);
