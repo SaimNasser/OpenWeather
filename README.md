@@ -6,16 +6,19 @@ This app shows weekly weather of major cities of Pakistan. It also consists of a
 * Mapbox.
 * Custom Fonts.
 * Graph.
+* Redux-toolkit
 * Splash Screen.
 * App icons.
 
 
 *Usage*
 
-clone repo
+* clone repo
+* add .env file at the root and paste the code below in it.
+ ```
+ API_KEY= <<your OpenWeather api key here>>
+ MAPBOX_KEY= <<your Mapbox api key here>>
+ ```
 
-add .env file at the root ()
-
-yarn install or yarn
-
-npx react-native run-android
+* yarn install or yarn
+* npx react-native run-android
