@@ -7,6 +7,7 @@ import { BaseUrl } from './Config';
 axios.defaults.baseURL = BaseUrl;
 
 export const getCityWeather = async (lat, lon) => {
+    console.log(API_KEY)
     try {
         const response = await axios.get('forecast/', {
             params: {

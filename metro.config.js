@@ -4,7 +4,13 @@
  *
  * @format
  */
-
+module.exports = {
+  project: {
+    ios: {},
+    android: {}
+  },
+  assets: ['./src/assets/fonts/'],
+}
 module.exports = {
   transformer: {
     getTransformOptions: async () => ({

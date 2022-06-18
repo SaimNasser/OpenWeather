@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import AppColors from '../../utills/AppColors';
 import { width, height } from 'react-native-dimension'
 const styles = StyleSheet.create({
@@ -42,8 +42,9 @@ const styles = StyleSheet.create({
     padding: width(3)
   },
   chart: {
-    marginLeft: width(2),
-    marginTop: height(4)
+    marginRight: width(2),
+    alignSelf: 'center',
+    marginTop: height(3)
   },
   flatlistContent: {
     paddingVertical: height(2),
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
   mapBtn: {
     backgroundColor: AppColors.darkGrey,
     alignSelf: 'center',
-    borderRadius: width(2)
+    borderRadius: width(2),
   }
 });
 export default styles;

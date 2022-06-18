@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
   title: {
     color: AppColors.black,
     fontSize: width(4.9),
-    fontFamily: Fonts.Pacifo
+    fontFamily: Fonts.Pacifo,
+    fontWeight: 'normal'
   },
   cornerContainer: {
     height: '100%',

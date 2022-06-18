@@ -13,6 +13,13 @@ const styles = StyleSheet.create({
         paddingHorizontal: width(4),
         paddingLeft: width(5),
         borderRadius: width(2),
+        shadowColor: AppColors.black,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.23,
+        shadowRadius: 2.62,
     },
     text: {
         flex: 1,

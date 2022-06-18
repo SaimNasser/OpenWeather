@@ -9,6 +9,7 @@ import AppColors from '../../utills/AppColors';
 import styles from './styles';
 import MapboxGL from '@rnmapbox/maps';
 import { MAPBOX_KEY } from '@env'
+console.log(MAPBOX_KEY)
 MapboxGL.setAccessToken(MAPBOX_KEY);
 import { height, width } from 'react-native-dimension';
 import IconButton from '../../components/IconButton';
@@ -23,12 +24,13 @@ export default function Dashboard(props) {
   const cameraRef = useRef(null);
   // const [userLocation, setUserLocation] = useState(null);
   const userLocRef = useRef(null);
+
   useEffect(() => { }, []);
   const recenter = async (coords) => {
     cameraRef?.current?.setCamera({
       centerCoordinate: coords,
       zoomLevel: 11,
-      animationDuration: 2000,
+      animationDuration: 1200,
     });
   };
   const renderBackIcon = () => (
@@ -41,6 +43,7 @@ export default function Dashboard(props) {
       color={AppColors.black}
     />
   );
+  console.log(selectedCity?.coords)
   return (
     <ScreenWrapper
       statusBarColor={AppColors.white}
@@ -50,10 +53,11 @@ export default function Dashboard(props) {
         <MapboxGL.MapView
           onLayout={() => recenter(selectedCity?.coords)}
           ref={mapRef}
-          style={styles.map}>
-          <MapboxGL.PointAnnotation coordinate={selectedCity?.coords} />
+          style={styles.map}
+          styleURL={MapboxGL.StyleURL.Dark}>
 
           <MapboxGL.Camera ref={cameraRef} />
+          <MapboxGL.PointAnnotation id='city' coordinate={selectedCity?.coords} />
           <MapboxGL.UserLocation visible={true} ref={userLocRef} />
         </MapboxGL.MapView>
         <IconButton
