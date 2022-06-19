@@ -1255,8 +1255,8 @@
     reselect "^4.1.5"
 
 "@rnmapbox/maps@rnmapbox/maps#main":
-  version "10.0.0-beta.1"
-  resolved "https://codeload.github.com/rnmapbox/maps/tar.gz/fdcd0c3b6602a1feb16635df65ccbbb2dd10f365"
+  version "10.0.0-beta.15"
+  resolved "https://codeload.github.com/rnmapbox/maps/tar.gz/21a48e912def5d79f91ab864a5298493f09f0a77"
   dependencies:
     "@expo/config-plugins" "^4.0.3"
     "@mapbox/geo-viewport" ">= 0.4.0"

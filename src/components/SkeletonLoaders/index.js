@@ -29,7 +29,7 @@ export const ButtonLoader = ({
 }) => {
     return (
         <SkeletonPlaceholder>
-            <View style={styles.chartContainer} />
+            <View style={styles.btnContainer} />
         </SkeletonPlaceholder>
     );
 }

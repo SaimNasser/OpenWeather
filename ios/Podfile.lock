@@ -61,6 +61,15 @@ PODS:
   - glog (0.3.5)
   - hermes-engine (0.7.2)
   - libevent (2.1.12)
+  - MapboxCommon (21.3.0)
+  - MapboxCoreMaps (10.5.3):
+    - MapboxCommon (~> 21.3)
+  - MapboxMaps (10.5.1):
+    - MapboxCommon (= 21.3.0)
+    - MapboxCoreMaps (= 10.5.3)
+    - MapboxMobileEvents (= 1.0.7)
+    - Turf (~> 2.0)
+  - MapboxMobileEvents (1.0.7)
   - OpenSSL-Universal (1.1.180)
   - RCT-Folly (2020.01.13.00):
     - boost-for-react-native
@@ -344,13 +353,17 @@ PODS:
     - React-Core
   - RNGestureHandler (1.10.3):
     - React-Core
-  - rnmapbox-maps (10.0.0-beta.1):
+  - rnmapbox-maps (10.0.0-beta.15):
+    - MapboxMaps (~> 10.5.0)
     - React
     - React-Core
-    - rnmapbox-maps/DynamicLibrary (= 10.0.0-beta.1)
-  - rnmapbox-maps/DynamicLibrary (10.0.0-beta.1):
+    - rnmapbox-maps/DynamicLibrary (= 10.0.0-beta.15)
+    - Turf
+  - rnmapbox-maps/DynamicLibrary (10.0.0-beta.15):
+    - MapboxMaps (~> 10.5.0)
     - React
     - React-Core
+    - Turf
   - RNReanimated (1.13.3):
     - React-Core
   - RNScreens (2.18.1):
@@ -359,6 +372,7 @@ PODS:
     - React
   - RNVectorIcons (9.1.0):
     - React-Core
+  - Turf (2.4.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -441,7 +455,12 @@ SPEC REPOS:
     - FlipperKit
     - hermes-engine
     - libevent
+    - MapboxCommon
+    - MapboxCoreMaps
+    - MapboxMaps
+    - MapboxMobileEvents
     - OpenSSL-Universal
+    - Turf
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -541,6 +560,10 @@ SPEC CHECKSUMS:
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
   hermes-engine: 7d97ba46a1e29bacf3e3c61ecb2804a5ddd02d4f
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
+  MapboxCommon: a336e40b53e3fda5c419fe093c9c40aff4f4dd2b
+  MapboxCoreMaps: 259135c413370d63e998b6eb4acf888b5f292cc1
+  MapboxMaps: 7668203e0b731c6d5e31d982f3bd4bb245950061
+  MapboxMobileEvents: f7f3e8daeb4b83688ae62a4172dce79169a97233
   OpenSSL-Universal: 1aa4f6a6ee7256b83db99ec1ccdaa80d10f9af9b
   RCT-Folly: ec7a233ccc97cc556cf7237f0db1ff65b986f27c
   RCTRequired: 6d3e854f0e7260a648badd0d44fc364bc9da9728
@@ -570,14 +593,15 @@ SPEC CHECKSUMS:
   ReactCommon: 149906e01aa51142707a10665185db879898e966
   RNCMaskedView: c298b644a10c0c142055b3ae24d83879ecb13ccd
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
-  rnmapbox-maps: 88a3b9f7bf769c1e821196c38bef05405485eae6
+  rnmapbox-maps: f88612089df70340b68fd7136b28f9c7efc7d7ea
   RNReanimated: 514a11da3a2bcc6c3dfd9de32b38e2b9bf101926
   RNScreens: f7ad633b2e0190b77b6a7aab7f914fad6f198d8d
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   RNVectorIcons: 7923e585eaeb139b9f4531d25a125a1500162a0b
+  Turf: 60b93cfdc62758526bc7bf1ef191a829aeb9694d
   Yoga: 575c581c63e0d35c9a83f4b46d01d63abc1100ac
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 75b2ba396eb056c0ce46bfe851c800487509b2f8
+PODFILE CHECKSUM: c6498e8c25842022e9e00c6ba48ea58d5e69ae18
 
 COCOAPODS: 1.11.3

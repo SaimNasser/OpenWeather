@@ -20,7 +20,7 @@ import { ModalTypes } from '../../utills/Enums';
 import { LineChart } from "react-native-chart-kit";
 import SkeletonPlaceholder from "react-native-skeleton-placeholder";
 import WeatherCard from '../../components/WeatherCard';
-import { ChartLoader, WeatherLoader } from '../../components/SkeletonLoaders';
+import { ButtonLoader, ChartLoader, WeatherLoader } from '../../components/SkeletonLoaders';
 import IconButton from '../../components/IconButton';
 
 const chartConfig = {
@@ -104,7 +104,6 @@ export default function Dashboard({ navigation, route }) {
   }
   return (
     <ScreenWrapper
-      scrollEnabled
       statusBarColor={AppColors.white}
       barStyle='dark-content'
       headerUnScrollable={renderHeader}>
@@ -147,12 +146,14 @@ export default function Dashboard({ navigation, route }) {
                 bezier
               />}
           </View>}
+        {isLoading ?
+          <ButtonLoader />
+          : <Button
+            title={'Show Map'}
+            containerStyle={styles.mapBtn}
+            onPress={openMap}
+          />}
       </View>
-      <Button
-        title={'Show Map'}
-        containerStyle={styles.mapBtn}
-        onPress={openMap}
-      />
       <BottomModal
         type={modal?.type}
         isVisible={modal?.isVisible}

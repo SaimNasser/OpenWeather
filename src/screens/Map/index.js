@@ -1,35 +1,28 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Text, View } from 'react-native';
-import { showMessage } from 'react-native-flash-message';
-import { ScreenWrapper } from 'react-native-screen-wrapper';
-import { useDispatch, useSelector } from 'react-redux';
-import Button from '../../components/Button';
-import { logout } from '../../Redux/Actions/Auth';
-import AppColors from '../../utills/AppColors';
-import styles from './styles';
+import { MAPBOX_KEY } from '@env';
 import MapboxGL from '@rnmapbox/maps';
-import { MAPBOX_KEY } from '@env'
-console.log(MAPBOX_KEY)
-MapboxGL.setAccessToken(MAPBOX_KEY);
-import { height, width } from 'react-native-dimension';
-import IconButton from '../../components/IconButton';
+import React, { useRef } from 'react';
+import { View } from 'react-native';
+import { height } from 'react-native-dimension';
+import { ScreenWrapper } from 'react-native-screen-wrapper';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { useSelector } from 'react-redux';
+import IconButton from '../../components/IconButton';
 import { selectCity } from '../../Redux/features/citySlice';
+import AppColors from '../../utills/AppColors';
+import styles from './styles';
+MapboxGL.setAccessToken(MAPBOX_KEY);
 
 
 export default function Dashboard(props) {
   const selectedCity = useSelector(selectCity);
   const mapRef = useRef(null);
   const cameraRef = useRef(null);
-  // const [userLocation, setUserLocation] = useState(null);
   const userLocRef = useRef(null);
-
-  useEffect(() => { }, []);
   const recenter = async (coords) => {
     cameraRef?.current?.setCamera({
       centerCoordinate: coords,
-      zoomLevel: 11,
+      zoomLevel: 10,
       animationDuration: 1200,
     });
   };
@@ -43,7 +36,6 @@ export default function Dashboard(props) {
       color={AppColors.black}
     />
   );
-  console.log(selectedCity?.coords)
   return (
     <ScreenWrapper
       statusBarColor={AppColors.white}
@@ -51,10 +43,13 @@ export default function Dashboard(props) {
       barStyle="dark-content">
       <View style={styles.mainViewContainer}>
         <MapboxGL.MapView
-          onLayout={() => recenter(selectedCity?.coords)}
+          onLayout={() => {
+            recenter(selectedCity?.coords)
+          }}
           ref={mapRef}
           style={styles.map}
-          styleURL={MapboxGL.StyleURL.Dark}>
+          styleURL={MapboxGL.StyleURL.Dark}
+        >
 
           <MapboxGL.Camera ref={cameraRef} />
           <MapboxGL.PointAnnotation id='city' coordinate={selectedCity?.coords} />

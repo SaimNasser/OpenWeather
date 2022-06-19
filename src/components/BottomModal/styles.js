@@ -51,6 +51,9 @@ const styles = StyleSheet.create({
   cityImg: {
     height: height(30),
     width: width(85)
+  },
+  list: {
+    marginBottom: height(2)
   }
 });
 export default styles;

@@ -48,6 +48,7 @@ const BottomModal = ({
         <Image source={type == ModalTypes.CITY ? cityImg : calendarImg} style={styles.cityImg} resizeMode={'contain'} />
         <FlatList
           data={type == ModalTypes.CITY ? Cities : WeekDays}
+          style={styles.list}
           renderItem={renderItem}
           keyExtractor={item => item?.name}
         />

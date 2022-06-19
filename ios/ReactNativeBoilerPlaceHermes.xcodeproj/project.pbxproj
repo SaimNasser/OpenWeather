@@ -12,13 +12,13 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		17D585245BE41CE2960AB332 /* libPods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A02C6CD5D11E3ED8F0441F07 /* libPods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.a */; };
-		48C739AA8462CBB1AE3CA24A /* libPods-ReactNativeBoilerPlaceHermes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4FC823F15AD43AAB08B6792 /* libPods-ReactNativeBoilerPlaceHermes.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9D06320FCEE22332B796AF70 /* libPods-ReactNativeBoilerPlaceHermes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E1C5156AE7067005D8C6E2 /* libPods-ReactNativeBoilerPlaceHermes.a */; };
 		D6205551285E0E8A0013C5D1 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6205550285E0E8A0013C5D1 /* Pacifico-Regular.ttf */; };
 		D6205552285E0E8A0013C5D1 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6205550285E0E8A0013C5D1 /* Pacifico-Regular.ttf */; };
 		D657CBA3285DE4CD00DBB919 /* Mapbox in Frameworks */ = {isa = PBXBuildFile; productRef = C58C84B20C0D7DB2C21F8A4B /* Mapbox */; };
 		D657CBA4285DE4CD00DBB919 /* Mapbox in Frameworks */ = {isa = PBXBuildFile; productRef = B2CE1C9705E4FB6D06817338 /* Mapbox */; };
+		F3384DDC64A4B558D8E6259D /* libPods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC85D8EF9DCD7895F80F36C9 /* libPods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,24 +45,24 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ReactNativeBoilerPlaceHermes/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactNativeBoilerPlaceHermes/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ReactNativeBoilerPlaceHermes/main.m; sourceTree = "<group>"; };
+		13BA6834354990ED1F5C26D2 /* Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.release.xcconfig"; sourceTree = "<group>"; };
 		2557557D66CE4CA19A74AE9F /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
-		41E0879B2DE5543E142C55D6 /* Pods-ReactNativeBoilerPlaceHermes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBoilerPlaceHermes.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes.release.xcconfig"; sourceTree = "<group>"; };
-		55A8010C690CCD1FA6BF7649 /* Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		428BCD94069E293A43A2F62F /* Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5D851B9E31B64C2D860E61EB /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		644CDAA1845E4BCAB1686DD7 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		6FC23FF10568FEBF482F270C /* Pods-ReactNativeBoilerPlaceHermes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBoilerPlaceHermes.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes.debug.xcconfig"; sourceTree = "<group>"; };
+		66E1C5156AE7067005D8C6E2 /* libPods-ReactNativeBoilerPlaceHermes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeBoilerPlaceHermes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DA51B0465E45D68F7535B29 /* Pods-ReactNativeBoilerPlaceHermes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBoilerPlaceHermes.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes.debug.xcconfig"; sourceTree = "<group>"; };
 		70295015F3D049A2AF3CA728 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		766E67234B6F1420114569D2 /* Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.release.xcconfig"; sourceTree = "<group>"; };
 		7ACEBD503EA44A77BCD7F281 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		7B951009F4EC4285AFDE76F9 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		7FF382C3E633493885F490D0 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReactNativeBoilerPlaceHermes/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84F4BFB520E240E6A3665559 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		A02C6CD5D11E3ED8F0441F07 /* libPods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4CE38EAD9D4A25BB05A5D4 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		B8B03D8F7648459A8FF75131 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		C4FC823F15AD43AAB08B6792 /* libPods-ReactNativeBoilerPlaceHermes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeBoilerPlaceHermes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA92647395FA9A7A389816A7 /* Pods-ReactNativeBoilerPlaceHermes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBoilerPlaceHermes.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes.release.xcconfig"; sourceTree = "<group>"; };
 		C78CE5635BFE4A8A83B10CB5 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		CC85D8EF9DCD7895F80F36C9 /* libPods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6205550285E0E8A0013C5D1 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pacifico-Regular.ttf"; path = "../src/assets/images/fonts/Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		DE6C8B5EA9A34E87A306FAD0 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		E0EB52910E4D4197ADAF456A /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D657CBA4285DE4CD00DBB919 /* Mapbox in Frameworks */,
-				17D585245BE41CE2960AB332 /* libPods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.a in Frameworks */,
+				F3384DDC64A4B558D8E6259D /* libPods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D657CBA3285DE4CD00DBB919 /* Mapbox in Frameworks */,
-				48C739AA8462CBB1AE3CA24A /* libPods-ReactNativeBoilerPlaceHermes.a in Frameworks */,
+				9D06320FCEE22332B796AF70 /* libPods-ReactNativeBoilerPlaceHermes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,8 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				C4FC823F15AD43AAB08B6792 /* libPods-ReactNativeBoilerPlaceHermes.a */,
-				A02C6CD5D11E3ED8F0441F07 /* libPods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.a */,
+				66E1C5156AE7067005D8C6E2 /* libPods-ReactNativeBoilerPlaceHermes.a */,
+				CC85D8EF9DCD7895F80F36C9 /* libPods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -193,10 +193,10 @@
 		EC3D028D673711EBA043BCB8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6FC23FF10568FEBF482F270C /* Pods-ReactNativeBoilerPlaceHermes.debug.xcconfig */,
-				41E0879B2DE5543E142C55D6 /* Pods-ReactNativeBoilerPlaceHermes.release.xcconfig */,
-				55A8010C690CCD1FA6BF7649 /* Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.debug.xcconfig */,
-				766E67234B6F1420114569D2 /* Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.release.xcconfig */,
+				6DA51B0465E45D68F7535B29 /* Pods-ReactNativeBoilerPlaceHermes.debug.xcconfig */,
+				BA92647395FA9A7A389816A7 /* Pods-ReactNativeBoilerPlaceHermes.release.xcconfig */,
+				428BCD94069E293A43A2F62F /* Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.debug.xcconfig */,
+				13BA6834354990ED1F5C26D2 /* Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -208,12 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ReactNativeBoilerPlaceHermesTests" */;
 			buildPhases = (
-				38DDE59AB63FB9F9AFB7EB7F /* [CP] Check Pods Manifest.lock */,
+				7C6891D22E8F3B256677AC21 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				CD9686CDA2F35E3BF3935E83 /* [CP] Embed Pods Frameworks */,
-				E11055F7D78D57B9A3FF1C7B /* [CP] Copy Pods Resources */,
+				2057648F7D5A0D59670220BB /* [CP] Embed Pods Frameworks */,
+				B546D9B3D8DBD1F215D4C33B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,14 +232,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ReactNativeBoilerPlaceHermes" */;
 			buildPhases = (
-				0EBE4072D353ED83BFEED020 /* [CP] Check Pods Manifest.lock */,
+				53893963B123649FBE07B1E6 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				2CA520984BF50F5B6E335B9B /* [CP] Embed Pods Frameworks */,
-				59312EFDFBFD049A6612AB87 /* [CP] Copy Pods Resources */,
+				0BA0075BA16F8A79AC93888B /* [CP] Embed Pods Frameworks */,
+				616975397E3ECF350101DE19 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -328,7 +328,41 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		0EBE4072D353ED83BFEED020 /* [CP] Check Pods Manifest.lock */ = {
+		0BA0075BA16F8A79AC93888B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2057648F7D5A0D59670220BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53893963B123649FBE07B1E6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -350,24 +384,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2CA520984BF50F5B6E335B9B /* [CP] Embed Pods Frameworks */ = {
+		616975397E3ECF350101DE19 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		38DDE59AB63FB9F9AFB7EB7F /* [CP] Check Pods Manifest.lock */ = {
+		7C6891D22E8F3B256677AC21 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -389,41 +423,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		59312EFDFBFD049A6612AB87 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes/Pods-ReactNativeBoilerPlaceHermes-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CD9686CDA2F35E3BF3935E83 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests/Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E11055F7D78D57B9A3FF1C7B /* [CP] Copy Pods Resources */ = {
+		B546D9B3D8DBD1F215D4C33B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -493,7 +493,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55A8010C690CCD1FA6BF7649 /* Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.debug.xcconfig */;
+			baseConfigurationReference = 428BCD94069E293A43A2F62F /* Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -521,7 +521,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 766E67234B6F1420114569D2 /* Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.release.xcconfig */;
+			baseConfigurationReference = 13BA6834354990ED1F5C26D2 /* Pods-ReactNativeBoilerPlaceHermes-ReactNativeBoilerPlaceHermesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -546,15 +546,16 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FC23FF10568FEBF482F270C /* Pods-ReactNativeBoilerPlaceHermes.debug.xcconfig */;
+			baseConfigurationReference = 6DA51B0465E45D68F7535B29 /* Pods-ReactNativeBoilerPlaceHermes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 36QVWW9G72;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "i386 arm64";
 				INFOPLIST_FILE = ReactNativeBoilerPlaceHermes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -564,7 +565,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.openweather.test;
 				PRODUCT_NAME = ReactNativeBoilerPlaceHermes;
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactNativeBoilerPlaceHermes-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -575,14 +576,15 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41E0879B2DE5543E142C55D6 /* Pods-ReactNativeBoilerPlaceHermes.release.xcconfig */;
+			baseConfigurationReference = BA92647395FA9A7A389816A7 /* Pods-ReactNativeBoilerPlaceHermes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 36QVWW9G72;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "i386 arm64";
 				INFOPLIST_FILE = ReactNativeBoilerPlaceHermes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -592,7 +594,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.openweather.test;
 				PRODUCT_NAME = ReactNativeBoilerPlaceHermes;
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactNativeBoilerPlaceHermes-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
