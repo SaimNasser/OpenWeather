@@ -12,7 +12,7 @@ RNLocation.configure({
 })
 export default function Routes() {
   useEffect(() => {
-    SplashScreen.hide();
+      SplashScreen.hide({});
     RNLocation.requestPermission({
       ios: "whenInUse",
       android: {

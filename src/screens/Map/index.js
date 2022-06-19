@@ -2,7 +2,7 @@ import { MAPBOX_KEY } from '@env';
 import MapboxGL from '@rnmapbox/maps';
 import React, { useRef } from 'react';
 import { View } from 'react-native';
-import { height } from 'react-native-dimension';
+import { height, width } from 'react-native-dimension';
 import { ScreenWrapper } from 'react-native-screen-wrapper';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -43,16 +43,16 @@ export default function Dashboard(props) {
       barStyle="dark-content">
       <View style={styles.mainViewContainer}>
         <MapboxGL.MapView
-          onLayout={() => {
-            recenter(selectedCity?.coords)
-          }}
+          scaleBarPosition={{ bottom: 4, left: 20 }}
+          onLayout={() => recenter(selectedCity?.coords)}
           ref={mapRef}
           style={styles.map}
           styleURL={MapboxGL.StyleURL.Dark}
-        >
+          compassEnabled={false}
+          logoEnabled={false}>
 
           <MapboxGL.Camera ref={cameraRef} />
-          <MapboxGL.PointAnnotation id='city' coordinate={selectedCity?.coords} />
+          <MapboxGL.PointAnnotation  coordinate={selectedCity?.coords} />
           <MapboxGL.UserLocation visible={true} ref={userLocRef} />
         </MapboxGL.MapView>
         <IconButton
