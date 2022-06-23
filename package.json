@@ -13,7 +13,8 @@
     "assembleDebug": "npm-run-all assembleDebug:*",
     "assembleDebug:unlink": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "assembleDebug:clean": "cd android && ./gradlew clean",
-    "assembleDebug:assemble": "cd android && ./gradlew assembleDebug"
+    "assembleDebug:assemble": "cd android && ./gradlew assembleDebug",
+    "xcode": "yarn && cd ios && pod install && cd .. && xed ios"
   },
   "dependencies": {
     "@react-native-masked-view/masked-view": "^0.2.6",
