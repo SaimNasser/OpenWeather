@@ -11,7 +11,7 @@ This app shows weekly weather of major cities of Pakistan. It also consists of a
 * Mapbox.
 * Custom Fonts.
 * Graph.
-* Redux-toolkit
+* Redux-toolkit & RTK Query
 * Splash Screen.
 * App icons.
 
