@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     },
     text: {
         flex: 1,
-        fontSize: width(3.9),
+        fontSize: width(3.7),
         fontWeight: 'bold',
         color: AppColors.black
     },

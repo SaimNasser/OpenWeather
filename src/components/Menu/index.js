@@ -23,7 +23,7 @@ export default function Menu({
           size={height(2.5)}
           style={CommonStyles.marginRight_3}
         />
-        <Text style={styles.text}>{text ?? placeholder}</Text>
+        <Text style={styles.text} numberOfLines={1}>{text ?? placeholder}</Text>
         <Entypo
           name={'chevron-down'}
           color={AppColors.black}

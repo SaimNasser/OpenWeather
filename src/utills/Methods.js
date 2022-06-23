@@ -16,20 +16,39 @@ export function debounce(func, wait, immediate) {
 };
 
 //Filter and manipulte data from api
-export const getRefinedWeatherList = (rawList) => {
-    return rawList?.map((weatherObj) => {
+export const getRefinedWeatherList = (rawList, day) => {
+    let list = []
+    let dayArray = []
+    let timeAxis = []
+    let temperatureAxis = []
+    rawList?.forEach((weatherObj) => {
         const desc = weatherObj?.weather[0]?.description
-        let day = moment(weatherObj?.dt_txt, 'YYYY-MM-DD hh:mm').format('dddd')
-        return {
+        let dayFormat = moment(weatherObj?.dt_txt, 'YYYY-MM-DD hh:mm').format('dddd')
+        const item = {
             temperature: (Number(weatherObj?.main?.temp) - 273.15).toFixed(1),
             feelsLike: (Number(weatherObj?.main?.feels_like) - 273.15).toFixed(1),
             description: desc && desc != '' ? desc : '-',
             date: moment(weatherObj?.dt_txt, 'YYYY-MM-DD hh:mm').format('DD-MM-YYYY'),
             time: moment(weatherObj?.dt_txt, 'YYYY-MM-DD hh:mm').format('hh:mm'),
             imgUrl: `https://openweathermap.org/img/wn/${weatherObj?.weather[0]?.icon}@2x.png`,
-            day
+            day: dayFormat
+        }
+        if (item?.day == day?.name) {
+            dayArray.push(item)
+            timeAxis.push(item?.time)
+            temperatureAxis.push(Number(item?.temperature))
         }
     })
+    const chartData = {
+        labels: timeAxis,
+        datasets: [
+            {
+                data: temperatureAxis,
+                strokeWidth: 2
+            }
+        ],
+    };
+    return { chartData, dayArray }
 }
 
 export const capitalizeFirst = (str) => {

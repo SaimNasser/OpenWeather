@@ -1,28 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { FlatList, View, Image, Text, ActivityIndicator } from 'react-native';
+import React, { useState } from 'react';
+import { FlatList, Image, Text, View } from 'react-native';
+import { LineChart } from "react-native-chart-kit";
+import { height, width } from 'react-native-dimension';
 import { showMessage } from 'react-native-flash-message';
 import { useSelector } from 'react-redux';
-import Button from '../../components/Button';
-import Menu from '../../components/Menu';
+import sadCloud from '../../assets/images/sadCloud.png';
+import { useGetCityWeatherQuery } from '../../backend/Services';
 import BottomModal from '../../components/BottomModal';
+import Button from '../../components/Button';
 import Header from '../../components/Header';
+import Menu from '../../components/Menu';
 import ScreenWrapper from '../../components/ScreenWrapper';
+import { ButtonLoader, ChartLoader, WeatherLoader } from '../../components/SkeletonLoaders';
+import WeatherCard from '../../components/WeatherCard';
 import { selectCity, selectWeekday } from '../../Redux/features/citySlice';
 import AppColors from '../../utills/AppColors';
-import { Cities } from '../../utills/dummydata';
-import sadCloud from '../../assets/images/sadCloud.png'
-import { width, height } from 'react-native-dimension'
-import styles from './styles';
-import { getCityWeather } from '../../backend/WeatherApi';
-import Entypo from 'react-native-vector-icons/Entypo'
-import CommonStyles from '../../utills/CommonStyles';
 import { ModalTypes } from '../../utills/Enums';
-import { LineChart } from "react-native-chart-kit";
-import SkeletonPlaceholder from "react-native-skeleton-placeholder";
-import WeatherCard from '../../components/WeatherCard';
-import { ButtonLoader, ChartLoader, WeatherLoader } from '../../components/SkeletonLoaders';
-import IconButton from '../../components/IconButton';
-
+import { getRefinedWeatherList } from '../../utills/Methods';
+import styles from './styles';
 const chartConfig = {
   backgroundGradientFrom: AppColors.white,
   backgroundGradientTo: AppColors.white,
@@ -37,49 +32,20 @@ export default function Dashboard({ navigation, route }) {
   const selectedCity = useSelector(selectCity)
   const day = useSelector(selectWeekday)
   const [modal, setModal] = useState({ isVisible: false, type: ModalTypes.CITY })
-  const [weekly, setWeekly] = useState([])
-  const [isLoading, setLoading] = useState(true)
-  const [chartData, setChartdata] = useState(null)
 
-  useEffect(() => {
-    loadData()
-  }, [day, selectedCity])
-
-  // Loads weather data into local states
-  const loadData = async () => {
-    setLoading(true)
-    setWeekly([])
-    const weatherData = await getCityWeather(selectedCity?.coords[1], selectedCity?.coords[0])
-    if (weatherData) {
-      getDayArray(weatherData)
-    }
+  const { data: cityData, error: getCityError, isLoading, refetch } = useGetCityWeatherQuery({ lat: selectedCity?.coords[1], lon: selectedCity?.coords[0] })
+  if (getCityError) {
+    showMessage({
+      type: 'danger',
+      message: getCityError?.data?.message
+    })
+  }
+  // console.log(cityData?.city?.name, 'called', isLoading)
+  if (!isLoading && !getCityError) {
+    var { chartData, dayArray } = getRefinedWeatherList(cityData?.list, day)
   }
 
   //Used to filter weather data by day selected and also structure data to be used by line chart
-  const getDayArray = (list) => {
-    let dayArray = []
-    let timeAxis = []
-    let temperatureAxis = []
-    list.forEach(item => {
-      if (item?.day == day?.name) {
-        dayArray.push(item)
-        timeAxis.push(item?.time)
-        temperatureAxis.push(Number(item?.temperature))
-      }
-    })
-    const chartdataObj = {
-      labels: timeAxis,
-      datasets: [
-        {
-          data: temperatureAxis,
-          strokeWidth: 2
-        }
-      ],
-    };
-    setChartdata(chartdataObj)
-    setWeekly(dayArray)
-    setLoading(false)
-  }
   const openMap = () => navigation.navigate('Map')
   const renderHeader = () => (
     <Header
@@ -88,7 +54,7 @@ export default function Dashboard({ navigation, route }) {
   const renderWeatherCard = ({ item }) => (
     <WeatherCard item={item} />
   )
-  const renderEmptyWeather = () => {
+  const RenderEmptyWeather = ({ }) => {
     return (
       <View style={styles.emptyContainer}>
         <View style={styles.emptyInner}>
@@ -124,12 +90,12 @@ export default function Dashboard({ navigation, route }) {
           : <FlatList
             horizontal
             showsHorizontalScrollIndicator={false}
-            data={weekly}
+            data={dayArray}
             contentContainerStyle={styles.flatlistContent}
-            ListEmptyComponent={!isLoading && renderEmptyWeather()}
+            ListEmptyComponent={!isLoading && <RenderEmptyWeather />}
             renderItem={renderWeatherCard}
             style={styles.flatlist}
-            keyExtractor={item => item?.date + item?.time}
+            keyExtractor={(item, index) => item?.date + String(index)}
           />}
         {isLoading ?
           <ChartLoader />

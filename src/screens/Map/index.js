@@ -52,7 +52,7 @@ export default function Dashboard(props) {
           logoEnabled={false}>
 
           <MapboxGL.Camera ref={cameraRef} />
-          <MapboxGL.PointAnnotation  coordinate={selectedCity?.coords} />
+          <MapboxGL.PointAnnotation id='cityMarker' coordinate={selectedCity?.coords} />
           <MapboxGL.UserLocation visible={true} ref={userLocRef} />
         </MapboxGL.MapView>
         <IconButton
