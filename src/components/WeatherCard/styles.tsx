@@ -4,7 +4,6 @@ import AppColors from '../../utills/AppColors';
 
 const styles = StyleSheet.create({
     container: {
-        // width: width(45),
         elevation: 3,
         shadowOffset: {
             width: 0,

@@ -9,6 +9,9 @@ const styles = StyleSheet.create({
   scroll: {
     flex: 1,
     paddingBottom: height(1.5),
+  },
+  contentContainer: {
+
   }
 });
 export default styles;

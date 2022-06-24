@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { BaseUrl } from './Config'
-import { API_KEY } from '@env'
+import { API_KEY } from 'react-native-dotenv'
 
 // Define a service using a base URL and expected endpoints
 export const openWeatherApi = createApi({

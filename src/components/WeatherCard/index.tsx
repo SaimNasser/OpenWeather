@@ -1,18 +1,12 @@
+import moment from 'moment';
 import React from 'react';
 import {
-    ActivityIndicator,
-    Text,
-    Image,
-    View,
-    TouchableOpacity,
-    Platform,
+    Image, Text, View
 } from 'react-native';
-import AppColors from '../../utills/AppColors';
-import styles from './styles';
-import { height } from 'react-native-dimension';
-import moment from 'moment';
-import { capitalizeFirst } from '../../utills/Methods';
 import LinearGradient from 'react-native-linear-gradient';
+import AppColors from '../../utills/AppColors';
+import { capitalizeFirst } from '../../utills/Methods';
+import styles from './styles';
 const WeatherCard = ({
     item
 }) => {

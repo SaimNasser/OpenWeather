@@ -1,15 +1,13 @@
 import React from 'react';
-import { FlatList, Text, TouchableOpacity, View, Image } from 'react-native';
-import { height, width } from 'react-native-dimension';
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import calendarImg from '../../assets/images/calendarImg.png';
+import cityImg from '../../assets/images/cityImg.png';
+import { selectCity, selectWeekday, setCity, setWeekday } from '../../Redux/features/citySlice';
+import { Cities, WeekDays } from '../../utills/dummydata';
+import { ModalTypes } from '../../utills/Enums';
 import ModalWrapper from '../ModalWrapper';
 import styles from './styles';
-import Button from '../Button'
-import { Cities, WeekDays } from '../../utills/dummydata';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCity, selectWeekday, setCity, setWeekday } from '../../Redux/features/citySlice';
-import { ModalTypes } from '../../utills/Enums';
-import cityImg from '../../assets/images/cityImg.png'
-import calendarImg from '../../assets/images/calendarImg.png'
 const BottomModal = ({
   isVisible,
   onClose,

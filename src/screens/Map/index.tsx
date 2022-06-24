@@ -1,4 +1,4 @@
-import { MAPBOX_KEY } from '@env';
+import { MAPBOX_KEY } from 'react-native-dotenv';
 import MapboxGL from '@rnmapbox/maps';
 import React, { useRef } from 'react';
 import { View } from 'react-native';

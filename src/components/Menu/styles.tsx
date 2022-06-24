@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
         color: AppColors.black
     },
     dropDownContainer: {
-        backgroundColor: AppColors.white,
         elevation: 2,
         marginLeft: width(4),
         maxHeight: height(25),
@@ -36,7 +35,6 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: width(2),
         backgroundColor: AppColors.white,
         overflow: 'hidden'
-
     },
     dropText: {
         fontSize: width(3.5),

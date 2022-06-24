@@ -5,8 +5,6 @@ import { height, width } from 'react-native-dimension';
 const styles = StyleSheet.create({
   mainViewContainer: {
     flex: 1,
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
   text: {
     color: AppColors.green,

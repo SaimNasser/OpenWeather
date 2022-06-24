@@ -4,7 +4,6 @@ import { width, height } from 'react-native-dimension'
 const styles = StyleSheet.create({
   mainViewContainer: {
     height: height(98),
-    // paddingVertical: height(1.5)
   },
   flatlist: {
     flexGrow: 0

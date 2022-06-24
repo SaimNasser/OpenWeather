@@ -35,6 +35,8 @@ export default function Dashboard({ navigation, route }) {
 
   const { data: cityData, error: getCityError, isLoading, refetch } = useGetCityWeatherQuery({ lat: selectedCity?.coords[1], lon: selectedCity?.coords[0] })
   if (getCityError) {
+    console.log(JSON.stringify(getCityError));
+
     showMessage({
       type: 'danger',
       message: getCityError?.data?.message
@@ -60,7 +62,6 @@ export default function Dashboard({ navigation, route }) {
         <View style={styles.emptyInner}>
           <Image
             source={sadCloud}
-            tintColor={AppColors.darkGrey}
             resizeMode={'contain'}
             style={styles.emptyImage} />
           <Text style={styles.emptyText}>No data available</Text>
