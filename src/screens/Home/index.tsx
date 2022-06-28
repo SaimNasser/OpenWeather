@@ -33,10 +33,10 @@ export default function Dashboard({ navigation, route }) {
   const day = useSelector(selectWeekday)
   const [modal, setModal] = useState({ isVisible: false, type: ModalTypes.CITY })
 
-  const { data: cityData, error: getCityError, isLoading, refetch } = useGetCityWeatherQuery({ lat: selectedCity?.coords[1], lon: selectedCity?.coords[0] })
+  const { data: cityData,error: getCityError, isLoading } = useGetCityWeatherQuery({ lat: selectedCity?.coords[1], lon: selectedCity?.coords[0] })
+  console.log(JSON.stringify(cityData));
+  
   if (getCityError) {
-    console.log(JSON.stringify(getCityError));
-
     showMessage({
       type: 'danger',
       message: getCityError?.data?.message
@@ -105,7 +105,7 @@ export default function Dashboard({ navigation, route }) {
               chartData?.labels?.length > 0 &&
               <LineChart
                 data={chartData}
-                width={width(90)}
+                width={width(95)}
                 height={height(30)}
                 yAxisSuffix="C°"
                 style={styles.chart}

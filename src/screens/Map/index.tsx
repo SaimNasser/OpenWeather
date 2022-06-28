@@ -1,4 +1,4 @@
-import { MAPBOX_KEY } from 'react-native-dotenv';
+import { MAPBOX_KEY } from '@env';
 import MapboxGL from '@rnmapbox/maps';
 import React, { useRef } from 'react';
 import { View } from 'react-native';
@@ -13,13 +13,12 @@ import AppColors from '../../utills/AppColors';
 import styles from './styles';
 MapboxGL.setAccessToken(MAPBOX_KEY);
 
-
 export default function Dashboard(props) {
   const selectedCity = useSelector(selectCity);
   const mapRef = useRef(null);
   const cameraRef = useRef(null);
   const userLocRef = useRef(null);
-  const recenter = async (coords) => {
+  const recenter = async (coords: number[]) => {
     cameraRef?.current?.setCamera({
       centerCoordinate: coords,
       zoomLevel: 10,

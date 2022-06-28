@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     padding: width(3)
   },
   chart: {
-    marginRight: width(2),
+    marginRight: width(1),
     alignSelf: 'center',
     marginTop: height(3)
   },
