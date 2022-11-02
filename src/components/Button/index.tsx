@@ -13,7 +13,7 @@ const Button = ({
   activeOpacity = 0.7,
   containerStyle = {},
   textStyle = {},
-  icon = null,
+  icon = () => { },
 }) => {
   return (
     <TouchableOpacity

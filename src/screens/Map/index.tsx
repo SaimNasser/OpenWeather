@@ -1,5 +1,6 @@
-import { MAPBOX_KEY } from '@env';
-import MapboxGL from '@rnmapbox/maps';
+// import { MAPBOX_KEY } from '@env';
+import Config from "react-native-config";
+import MapboxGL, { MapViewProps } from '@rnmapbox/maps';
 import React, { useRef } from 'react';
 import { View } from 'react-native';
 import { height, width } from 'react-native-dimension';
@@ -10,14 +11,16 @@ import { useSelector } from 'react-redux';
 import IconButton from '../../components/IconButton';
 import { selectCity } from '../../Redux/features/citySlice';
 import AppColors from '../../utills/AppColors';
+import { Coords } from '../../utills/Types';
 import styles from './styles';
-MapboxGL.setAccessToken(MAPBOX_KEY);
+const { MAPBOX_KEY } = Config
+MapboxGL.setAccessToken(MAPBOX_KEY ?? null);
 
 export default function Dashboard(props) {
   const selectedCity = useSelector(selectCity);
   const mapRef = useRef(null);
-  const cameraRef = useRef(null);
-  const userLocRef = useRef(null);
+  const cameraRef = useRef<MapboxGL.Camera>(null);
+  const userLocRef = useRef<any>(null);
   const recenter = async (coords: number[]) => {
     cameraRef?.current?.setCamera({
       centerCoordinate: coords,
@@ -56,7 +59,7 @@ export default function Dashboard(props) {
         </MapboxGL.MapView>
         <IconButton
           containerStyle={styles.myLocationBtn}
-          onPress={() => recenter(userLocRef.current.state?.coordinates)}
+          onPress={() => recenter(userLocRef.current?.state?.coordinates)}
         />
         <IconButton
           icon={renderCityIcon}

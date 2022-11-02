@@ -33,13 +33,11 @@ export default function Dashboard({ navigation, route }) {
   const day = useSelector(selectWeekday)
   const [modal, setModal] = useState({ isVisible: false, type: ModalTypes.CITY })
 
-  const { data: cityData,error: getCityError, isLoading } = useGetCityWeatherQuery({ lat: selectedCity?.coords[1], lon: selectedCity?.coords[0] })
-  console.log(JSON.stringify(cityData));
-  
+  const { data: cityData, error: getCityError, isLoading } = useGetCityWeatherQuery({ lat: selectedCity?.coords[1], lon: selectedCity?.coords[0] })
   if (getCityError) {
     showMessage({
       type: 'danger',
-      message: getCityError?.data?.message
+      message: "Error fetching cities"
     })
   }
   // console.log(cityData?.city?.name, 'called', isLoading)

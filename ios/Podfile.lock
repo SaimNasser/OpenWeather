@@ -279,6 +279,10 @@ PODS:
     - React-jsi (= 0.64.2)
     - React-perflogger (= 0.64.2)
   - React-jsinspector (0.64.2)
+  - react-native-config (1.4.11):
+    - react-native-config/App (= 1.4.11)
+  - react-native-config/App (1.4.11):
+    - React-Core
   - react-native-location (2.5.0):
     - React
   - react-native-safe-area-context (3.2.0):
@@ -372,7 +376,7 @@ PODS:
     - React
   - RNVectorIcons (9.1.0):
     - React-Core
-  - Turf (2.4.0)
+  - Turf (2.5.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -418,6 +422,7 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
+  - react-native-config (from `../node_modules/react-native-config`)
   - react-native-location (from `../node_modules/react-native-location`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
@@ -496,6 +501,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
+  react-native-config:
+    :path: "../node_modules/react-native-config"
   react-native-location:
     :path: "../node_modules/react-native-location"
   react-native-safe-area-context:
@@ -576,6 +583,7 @@ SPEC CHECKSUMS:
   React-jsi: 67747b9722f6dab2ffe15b011bcf6b3f2c3f1427
   React-jsiexecutor: 80c46bd381fd06e418e0d4f53672dc1d1945c4c3
   React-jsinspector: cc614ec18a9ca96fd275100c16d74d62ee11f0ae
+  react-native-config: bcafda5b4c51491ee1b0e1d0c4e3905bc7b56c1b
   react-native-location: 5a40ec1cc6abf2f6d94df979f98ec76c3a415681
   react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
   react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
@@ -598,7 +606,7 @@ SPEC CHECKSUMS:
   RNScreens: f7ad633b2e0190b77b6a7aab7f914fad6f198d8d
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   RNVectorIcons: 7923e585eaeb139b9f4531d25a125a1500162a0b
-  Turf: 60b93cfdc62758526bc7bf1ef191a829aeb9694d
+  Turf: 8adf034c2963a0e587b979c51b5c12c396e29c44
   Yoga: 575c581c63e0d35c9a83f4b46d01d63abc1100ac
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
