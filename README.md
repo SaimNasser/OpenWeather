@@ -1,11 +1,12 @@
 
 
-https://user-images.githubusercontent.com/47677992/173940735-0405a85e-b439-4032-98ff-dbb8e0434b07.mp4
+## Open Weather
 
+https://user-images.githubusercontent.com/47677992/173940735-0405a85e-b439-4032-98ff-dbb8e0434b07.mp4
 
 This app shows weekly weather of major cities of Pakistan. It also consists of a map that shows your location and the selected city location
 
-*Features and Tech Stack*
+# Features and Tech Stack
 
 * Open Weather Api integration.
 * Mapbox.
